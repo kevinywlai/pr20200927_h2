@@ -19,4 +19,8 @@ public class MessageDAO {
 				)
 				.collect(Collectors.toList());
 	}
+	
+	public int insertAccount(String name) {
+		return jdbcTemplate.update(" insert into t_account values( ? ) ", new Object[] {name});
+	}
 }
